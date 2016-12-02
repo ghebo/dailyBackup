@@ -5,6 +5,8 @@ src2=/backup/mysql
 trg=/backup-manual
 log=/var/log/manual-bkp.log
 mount=vda1
+email=gh.botica@gmail.com
+
 today=$(date +"%Y%m%d")
 
 echo "$(date +"%d.%m.%Y %H:%M") -----    Start !!!   " > $log
@@ -17,5 +19,5 @@ echo "$(date +"%d.%m.%Y %H:%M") ----- Free space left on /$mount:             $(
 
 echo "$(date +"%d.%m.%Y %H:%M") -----    Done !!!   " >> $log
 
-mail -s "Daily backup log" gh.botica@gmail.com < $log
+mail -s "Daily backup log" $email < $log
 
